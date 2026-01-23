@@ -13,9 +13,9 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Victor | Full-stack Developer",
+  title: "Victor.AKINYEMI | Frontend Developer",
   description:
-    "Full-stack developer and visual designer crafting calm, high-performing web experiences.",
+    "Frontend developer and visual designer crafting calm, high-performing web experiences.",
 };
 
 export default function RootLayout({
