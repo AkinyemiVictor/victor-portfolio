@@ -26,7 +26,7 @@ export default function Home() {
 
   const contactSocial = [
     ...socialLinks,
-    { label: "Email", href: "mailto:hello@victor.dev", type: "email" },
+    { label: "Email", href: "mailto:victorakinyemi52@gmail.com", type: "email" },
   ];
 
   const skills = [
@@ -57,7 +57,7 @@ export default function Home() {
       ],
       tone: "graphite",
       layout: "stacked",
-      thumbnail: "/projects/jm-quality-constructions.svg",
+      thumbnail: "/previews/jm-constructions.png",
       links: {
         github: "https://github.com/AkinyemiVictor/jm-quality-constructions",
         live: "https://jm-quality-constructions.vercel.app/",
@@ -78,7 +78,7 @@ export default function Home() {
       ],
       tone: "sand",
       layout: "split",
-      thumbnail: "/projects/next-century-power.svg",
+      thumbnail: "/previews/next-century-power.png",
       links: {
         github: "https://github.com/AkinyemiVictor/next-century-power",
         live: "https://next-century-power.vercel.app/",
@@ -99,7 +99,7 @@ export default function Home() {
       ],
       tone: "moss",
       layout: "cascade",
-      thumbnail: "/projects/culture-hill.svg",
+      thumbnail: "/previews/culture-hill.png",
       links: {
         github: "https://github.com/AkinyemiVictor/Culture-Hill-website",
         live: "https://culture-hill-website.vercel.app/",
@@ -120,7 +120,7 @@ export default function Home() {
       ],
       tone: "blue",
       layout: "split",
-      thumbnail: "/projects/shop-it.svg",
+      thumbnail: "/previews/shopit.png",
       links: {
         github: "https://github.com/AkinyemiVictor/shopit-e-commerce-web-app",
         live: "https://shopit-e-commerce-web-app.vercel.app/",
@@ -179,7 +179,7 @@ export default function Home() {
               <a className="pill pill-primary" href="#projects">
                 Projects
               </a>
-              <a className="pill pill-ghost" href="mailto:hello@victor.dev">
+              <a className="pill pill-ghost" href="mailto:victorakinyemi52@gmail.com">
                 Let&#39;s talk
               </a>
             </div>
@@ -259,7 +259,17 @@ export default function Home() {
           <div className="profile-right">
             <div className="portrait-card glass">
               <div className="portrait-frame">
-                <span className="portrait-label">Portrait</span>
+                <div className="portrait-media">
+                  <Image
+                    className="portrait-image"
+                    src="/Frame 8 (1).png"
+                    alt="Victor Akinyemi portrait"
+                    fill
+                    sizes="(max-width: 900px) 100vw, 28vw"
+                    quality={100}
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
