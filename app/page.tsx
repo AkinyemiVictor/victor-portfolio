@@ -11,10 +11,10 @@ export default function Home() {
   const metaItems = [{ label: "Year", value: "2026" }];
 
   const socialLinks = [
-    { label: "GitHub", href: "https://github.com", type: "github" },
-    { label: "LinkedIn", href: "https://linkedin.com", type: "linkedin" },
-    { label: "Telegram", href: "https://t.me", type: "telegram" },
-    { label: "Instagram", href: "https://instagram.com", type: "instagram" },
+    { label: "GitHub", href: "https://github.com/AkinyemiVictor", type: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/knym-/", type: "linkedin" },
+    { label: "Telegram", href: "https://web.telegram.org/k/", type: "telegram" },
+    { label: "Instagram", href: "https://www.instagram.com/sope.idesign/", type: "instagram" },
   ];
 
   const contactLinks = [
@@ -102,7 +102,7 @@ export default function Home() {
       thumbnail: "/projects/culture-hill.svg",
       links: {
         github: "https://github.com/AkinyemiVictor/Culture-Hill-website",
-        live: "",
+        live: "https://culture-hill-website.vercel.app/",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function Home() {
       thumbnail: "/projects/shop-it.svg",
       links: {
         github: "https://github.com/AkinyemiVictor/shopit-e-commerce-web-app",
-        live: "",
+        live: "https://shopit-e-commerce-web-app.vercel.app/",
       },
     },
   ];
