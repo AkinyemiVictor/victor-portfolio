@@ -59,7 +59,7 @@ export default function Home() {
       layout: "stacked",
       thumbnail: "/projects/jm-quality-constructions.svg",
       links: {
-        github: "",
+        github: "https://github.com/AkinyemiVictor/jm-quality-constructions",
         live: "https://jm-quality-constructions.vercel.app/",
       },
     },
@@ -80,7 +80,7 @@ export default function Home() {
       layout: "split",
       thumbnail: "/projects/next-century-power.svg",
       links: {
-        github: "",
+        github: "https://github.com/AkinyemiVictor/next-century-power",
         live: "https://next-century-power.vercel.app/",
       },
     },
@@ -101,7 +101,7 @@ export default function Home() {
       layout: "cascade",
       thumbnail: "/projects/culture-hill.svg",
       links: {
-        github: "",
+        github: "https://github.com/AkinyemiVictor/Culture-Hill-website",
         live: "",
       },
     },
@@ -122,7 +122,7 @@ export default function Home() {
       layout: "split",
       thumbnail: "/projects/shop-it.svg",
       links: {
-        github: "",
+        github: "https://github.com/AkinyemiVictor/shopit-e-commerce-web-app",
         live: "",
       },
     },
