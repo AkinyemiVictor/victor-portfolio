@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProjectVisual from "./components/ProjectVisual";
 
 export default function Home() {
   const navLinks = [
@@ -87,9 +88,9 @@ export default function Home() {
     {
       title: "Culture Hill",
       summary:
-        "Upcoming project currently in planning, focused on a modern brand-forward web presence.",
+        "Farm-focused brand website crafted to present produce lines, story-led content, and a clean customer journey.",
       details:
-        "Scope includes content modeling, responsive templates, and polished storytelling sections.",
+        "Built responsive landing and catalog sections with clear hierarchy, trust cues, and conversion-ready call-to-actions.",
       tech: [
         "Next.js",
         "TypeScript",
@@ -108,9 +109,9 @@ export default function Home() {
     {
       title: "Shop It",
       summary:
-        "Upcoming e-commerce experience with a focus on discoverability, speed, and conversion flow.",
+        "E-commerce storefront designed for fast browsing, product discovery, and a frictionless shopping flow.",
       details:
-        "Planned delivery includes product collections, filtering, cart flow, and checkout-ready UX patterns.",
+        "Implemented category-driven collections, product filtering, cart interactions, and checkout-focused UI states.",
       tech: [
         "Next.js",
         "TypeScript",
@@ -319,40 +320,12 @@ export default function Home() {
                   data-align={index % 2 === 0 ? "left" : "right"}
                   key={project.title}
                 >
-                  <div
-                    className={`project-visual${project.thumbnail ? " has-thumbnail" : ""}`}
-                    data-layout={project.layout}
-                  >
-                    {project.thumbnail ? (
-                      <Image
-                        className="project-thumbnail"
-                        src={project.thumbnail}
-                        alt={`${project.title} preview`}
-                        fill
-                        sizes="(max-width: 900px) 100vw, 55vw"
-                      />
-                    ) : (
-                      <>
-                        <span className="visual-layer visual-main" />
-                        <span className="visual-layer visual-sub" />
-                        <span className="visual-layer visual-chip" />
-                      </>
-                    )}
-                    {project.links?.live ? (
-                      <a
-                        className="project-cta"
-                        href={project.links.live}
-                        aria-label={`Visit ${project.title}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M14 3h7v7h-2V6.41l-8.3 8.3-1.4-1.42 8.3-8.29H14V3Z" />
-                          <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
-                        </svg>
-                      </a>
-                    ) : null}
-                  </div>
+                  <ProjectVisual
+                    layout={project.layout}
+                    liveLink={project.links?.live}
+                    thumbnail={project.thumbnail}
+                    title={project.title}
+                  />
                   <div className="project-content">
                     <p className="project-kicker">Front-end project</p>
                     <h3 className="project-name">{project.title}</h3>
