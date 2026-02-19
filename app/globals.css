@@ -662,6 +662,16 @@ a {
   mix-blend-mode: screen;
 }
 
+.project-thumbnail {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.project-visual.has-thumbnail::after {
+  opacity: 0.1;
+}
+
 .visual-layer {
   position: absolute;
   border-radius: 22px;

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Next Century Power thumbnail</title>
+  <desc id="desc">Placeholder preview image for Next Century Power project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e2418" />
+      <stop offset="100%" stop-color="#120f0b" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.7">
+      <stop offset="0%" stop-color="#c79b6b" stop-opacity="0.82" />
+      <stop offset="100%" stop-color="#c79b6b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <circle cx="920" cy="180" r="360" fill="url(#glow)" />
+  <rect x="96" y="110" width="1008" height="580" rx="36" fill="none" stroke="#f2f2f2" stroke-opacity="0.22" />
+  <rect x="132" y="146" width="936" height="508" rx="28" fill="#17120d" fill-opacity="0.85" />
+  <text x="160" y="320" fill="#f5f5f5" font-size="80" font-family="Open Sans, Arial, sans-serif" font-weight="700" letter-spacing="2.5">NEXT CENTURY</text>
+  <text x="160" y="410" fill="#e4ccb1" font-size="68" font-family="Open Sans, Arial, sans-serif" font-weight="600" letter-spacing="2.5">POWER</text>
+  <text x="160" y="520" fill="#b7b0a7" font-size="32" font-family="Fira Code, monospace" letter-spacing="1.5">Replace with project screenshot</text>
+</svg>

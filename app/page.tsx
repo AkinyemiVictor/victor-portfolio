@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const navLinks = [
     { label: "About", href: "#about" },
@@ -41,59 +43,87 @@ export default function Home() {
 
   const frontendProjects = [
     {
-      title: "Gostat",
+      title: "JM Quality Constructions",
       summary:
-        "Real-time analytics UI focused on clarity, speed, and a compact data layout.",
+        "Marketing website for a construction company with clear service messaging and mobile-first browsing.",
       details:
-        "Built responsive dashboards, chart modules, and reusable UI blocks for daily monitoring.",
-      tech: ["Next.js", "TypeScript", "React Query", "Recharts", "Tailwind", "Vercel"],
-      tone: "blue",
+        "Built service pages, a project showcase, and a quote flow designed to improve lead conversion.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive Design",
+        "SEO",
+      ],
+      tone: "graphite",
       layout: "stacked",
+      thumbnail: "/projects/jm-quality-constructions.svg",
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
+        github: "",
+        live: "https://jm-quality-constructions.vercel.app/",
       },
     },
     {
-      title: "Kana Master",
+      title: "Next Century Power",
       summary:
-        "Learning experience with layered screen states and smooth, guided flows.",
+        "Corporate web experience for an energy brand focused on trust, speed, and clear information architecture.",
       details:
-        "Designed multi-device layouts, motion-driven transitions, and clear navigation.",
+        "Delivered responsive content sections, conversion-oriented CTAs, and scalable component patterns.",
       tech: [
-        "React",
+        "Next.js",
         "TypeScript",
-        "React Native",
-        "Redux Toolkit",
-        "i18n",
-        "Expo",
+        "Tailwind CSS",
+        "Performance",
+        "Component System",
       ],
       tone: "sand",
       layout: "split",
+      thumbnail: "/projects/next-century-power.svg",
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
+        github: "",
+        live: "https://next-century-power.vercel.app/",
       },
     },
     {
-      title: "Anime Sentry",
+      title: "Culture Hill",
       summary:
-        "Notification-first UI with sharp visual hierarchy and adaptive feeds.",
+        "Upcoming project currently in planning, focused on a modern brand-forward web presence.",
       details:
-        "Crafted a clean interface for tracking, alerts, and rich content previews.",
+        "Scope includes content modeling, responsive templates, and polished storytelling sections.",
       tech: [
         "Next.js",
-        "JavaScript",
-        "PWA",
-        "Framer Motion",
+        "TypeScript",
+        "CMS Integration",
         "Accessibility",
         "Responsive UI",
       ],
       tone: "moss",
       layout: "cascade",
+      thumbnail: "/projects/culture-hill.svg",
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
+        github: "",
+        live: "",
+      },
+    },
+    {
+      title: "Shop It",
+      summary:
+        "Upcoming e-commerce experience with a focus on discoverability, speed, and conversion flow.",
+      details:
+        "Planned delivery includes product collections, filtering, cart flow, and checkout-ready UX patterns.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "API Integration",
+        "State Management",
+        "E-commerce UI",
+      ],
+      tone: "blue",
+      layout: "split",
+      thumbnail: "/projects/shop-it.svg",
+      links: {
+        github: "",
+        live: "",
       },
     },
   ];
@@ -279,10 +309,25 @@ export default function Home() {
                   data-align={index % 2 === 0 ? "left" : "right"}
                   key={project.title}
                 >
-                  <div className="project-visual" data-layout={project.layout}>
-                    <span className="visual-layer visual-main" />
-                    <span className="visual-layer visual-sub" />
-                    <span className="visual-layer visual-chip" />
+                  <div
+                    className={`project-visual${project.thumbnail ? " has-thumbnail" : ""}`}
+                    data-layout={project.layout}
+                  >
+                    {project.thumbnail ? (
+                      <Image
+                        className="project-thumbnail"
+                        src={project.thumbnail}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 55vw"
+                      />
+                    ) : (
+                      <>
+                        <span className="visual-layer visual-main" />
+                        <span className="visual-layer visual-sub" />
+                        <span className="visual-layer visual-chip" />
+                      </>
+                    )}
                     {project.links?.live ? (
                       <a
                         className="project-cta"

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Culture Hill thumbnail</title>
+  <desc id="desc">Placeholder preview image for Culture Hill project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2820" />
+      <stop offset="100%" stop-color="#0c120f" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.82" r="0.75">
+      <stop offset="0%" stop-color="#6f8f78" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#6f8f78" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <circle cx="250" cy="620" r="360" fill="url(#glow)" />
+  <rect x="96" y="110" width="1008" height="580" rx="36" fill="none" stroke="#f2f2f2" stroke-opacity="0.22" />
+  <rect x="132" y="146" width="936" height="508" rx="28" fill="#111815" fill-opacity="0.88" />
+  <text x="160" y="344" fill="#f5f5f5" font-size="86" font-family="Open Sans, Arial, sans-serif" font-weight="700" letter-spacing="3">CULTURE HILL</text>
+  <text x="160" y="432" fill="#bed2c4" font-size="38" font-family="Fira Code, monospace" letter-spacing="1.5">Upcoming project</text>
+  <text x="160" y="520" fill="#9fb0a6" font-size="32" font-family="Fira Code, monospace" letter-spacing="1.5">Replace with project screenshot</text>
+</svg>
