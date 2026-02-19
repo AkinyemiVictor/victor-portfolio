@@ -455,14 +455,39 @@ a {
 }
 
 .portrait-card {
+  --portrait-accent-rgb: 242, 92, 62;
   width: fit-content;
   padding: 12px;
   border-radius: 26px;
   min-height: 0;
+  overflow: visible;
 }
 
 .portrait-card::before {
   display: none;
+}
+
+.portrait-card::after {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  border-radius: 34px;
+  background:
+    radial-gradient(
+      circle at 24% 18%,
+      rgba(var(--portrait-accent-rgb), 0.62),
+      transparent 58%
+    ),
+    radial-gradient(
+      circle at 78% 82%,
+      rgba(var(--portrait-accent-rgb), 0.36),
+      transparent 64%
+    );
+  filter: blur(20px);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .portrait-frame {
@@ -473,11 +498,55 @@ a {
   height: auto;
   border-radius: 22px;
   padding: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), transparent 55%),
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--portrait-accent-rgb), 0.28) 0%,
+      rgba(var(--portrait-accent-rgb), 0.12) 18%,
+      transparent 42%,
+      transparent 64%,
+      rgba(var(--portrait-accent-rgb), 0.14) 86%,
+      rgba(var(--portrait-accent-rgb), 0.24) 100%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(var(--portrait-accent-rgb), 0.42),
+      transparent 58%
+    ),
     #121212;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--portrait-accent-rgb), 0.54);
+  box-shadow:
+    0 26px 58px rgba(0, 0, 0, 0.52),
+    0 0 36px rgba(var(--portrait-accent-rgb), 0.48),
+    0 0 78px rgba(var(--portrait-accent-rgb), 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.4);
+  isolation: isolate;
   overflow: hidden;
+  z-index: 1;
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    130deg,
+    rgba(var(--portrait-accent-rgb), 0.72) 0%,
+    rgba(var(--portrait-accent-rgb), 0.18) 38%,
+    rgba(255, 255, 255, 0.2) 62%,
+    rgba(var(--portrait-accent-rgb), 0.58) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .portrait-media {
@@ -488,6 +557,7 @@ a {
   border-radius: inherit;
   background: transparent;
   overflow: hidden;
+  z-index: 1;
 }
 
 .portrait-image {
@@ -673,7 +743,7 @@ a {
   width: 100%;
   aspect-ratio: 1540 / 850;
   min-height: 0;
-  border-radius: 28px;
+  border-radius: 18px;
   border: 1px solid rgba(var(--project-accent-rgb), 0.45);
   background:
     linear-gradient(
@@ -741,7 +811,7 @@ a {
 .project-media-frame {
   position: absolute;
   inset: var(--preview-gap-y) 0;
-  border-radius: 24px;
+  border-radius: 0;
   overflow: hidden;
   z-index: 0;
 }
@@ -749,8 +819,9 @@ a {
 .project-thumbnail {
   position: absolute;
   inset: 0;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 0;
   z-index: 0;
 }
 
@@ -2331,7 +2402,7 @@ a {
   }
 
   .project-visual {
-    aspect-ratio: 1540 / 775;
+    aspect-ratio: 1540 / 850;
   }
 
   .project-tags {
