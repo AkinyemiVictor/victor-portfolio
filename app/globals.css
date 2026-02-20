@@ -470,22 +470,21 @@ a {
 .portrait-card::after {
   content: "";
   position: absolute;
-  inset: -24px;
+  inset: -18px;
   border-radius: 34px;
   background:
     radial-gradient(
       circle at 24% 18%,
-      rgba(var(--portrait-accent-rgb), 0.62),
+      rgba(var(--portrait-accent-rgb), 0.34),
       transparent 58%
     ),
     radial-gradient(
       circle at 78% 82%,
-      rgba(var(--portrait-accent-rgb), 0.36),
+      rgba(var(--portrait-accent-rgb), 0.18),
       transparent 64%
     );
-  filter: blur(20px);
-  mix-blend-mode: screen;
-  opacity: 0.9;
+  filter: blur(16px);
+  opacity: 0.58;
   pointer-events: none;
   z-index: 0;
 }
@@ -518,8 +517,8 @@ a {
   border: 1px solid rgba(var(--portrait-accent-rgb), 0.54);
   box-shadow:
     0 26px 58px rgba(0, 0, 0, 0.52),
-    0 0 36px rgba(var(--portrait-accent-rgb), 0.48),
-    0 0 78px rgba(var(--portrait-accent-rgb), 0.26),
+    0 0 24px rgba(var(--portrait-accent-rgb), 0.24),
+    0 0 56px rgba(var(--portrait-accent-rgb), 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
     inset 0 -8px 20px rgba(0, 0, 0, 0.4);
   isolation: isolate;
