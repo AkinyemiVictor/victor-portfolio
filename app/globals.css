@@ -224,6 +224,32 @@ a {
   color: var(--page-muted);
 }
 
+.lang-option {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--page-muted);
+  font: inherit;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.lang-option:hover {
+  color: var(--page-ink);
+}
+
+.lang-option.is-active {
+  color: var(--page-ink);
+}
+
+.lang-option:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 .lang-divider {
   opacity: 0.4;
 }
@@ -427,25 +453,47 @@ a {
 
 .skill-grid {
   display: grid;
-  gap: 16px;
+  width: min(100%, 760px);
 }
 
-.skill-card {
+.skill-panel {
+  border-radius: 22px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+}
+
+.skill-panel::before {
+  display: none;
+}
+
+.skill-row {
   padding: 18px 20px;
-  border-radius: 18px;
+  display: grid;
+  gap: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.skill-row.has-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .skill-title {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1rem;
 }
 
 .skill-list {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--page-muted);
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .profile-right {

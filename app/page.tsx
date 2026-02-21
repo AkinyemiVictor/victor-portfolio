@@ -114,13 +114,21 @@ const localeContent = {
       "Hello! I'm Victor Akinyemi, I'm a full-stack web developer with over 2 years of experience.",
     skills: [
       {
-        title: "Full-stack",
+        title: "Front-end",
         items:
           "HTML5 / CSS3 / JavaScript / Next.js / React / React Native / Responsive Web Design / Component Libraries / Interaction Design",
       },
       {
         title: "Styles",
         items: "Tailwind / Bootstrap",
+      },
+      {
+        title: "Back-end",
+        items: "Node.js / Express.js / REST APIs / PostgreSQL / MongoDB / Authentication",
+      },
+      {
+        title: "DevOps",
+        items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Monitoring Basics",
       },
     ],
     projects: {
@@ -198,13 +206,22 @@ const localeContent = {
       "Bonjour ! Je suis Victor Akinyemi, développeur web full-stack avec plus de 2 ans d'expérience.",
     skills: [
       {
-        title: "Full-stack",
+        title: "Front-end",
         items:
           "HTML5 / CSS3 / JavaScript / Next.js / React / React Native / Responsive Web Design / Component Libraries / Interaction Design",
       },
       {
         title: "Styles",
         items: "Tailwind / Bootstrap",
+      },
+      {
+        title: "Back-end",
+        items:
+          "Node.js / Express.js / API REST / PostgreSQL / MongoDB / Authentification",
+      },
+      {
+        title: "DevOps",
+        items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Bases de monitoring",
       },
     ],
     projects: {
@@ -321,30 +338,43 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <div className="lang-pill" aria-label="Language switch">
-            <span>En</span>
-            <span className="lang-divider">/</span>
-            <span>Ge</span>
+          <div className="lang-pill" role="group" aria-label={content.languageSwitch}>
+            <button
+              type="button"
+              className={`lang-option${locale === "en" ? " is-active" : ""}`}
+              onClick={() => setLocale("en")}
+              aria-pressed={locale === "en"}
+            >
+              En
+            </button>
+            <span className="lang-divider" aria-hidden="true">
+              /
+            </span>
+            <button
+              type="button"
+              className={`lang-option${locale === "fr" ? " is-active" : ""}`}
+              onClick={() => setLocale("fr")}
+              aria-pressed={locale === "fr"}
+            >
+              Fr
+            </button>
           </div>
         </header>
 
         <section className="hero reveal" aria-labelledby="hero-title">
           <div className="hero-left">
-            <p className="mono-label">Software developer</p>
+            <p className="mono-label">{content.hero.role}</p>
             <h1 id="hero-title" className="hero-title">
-              <span>Full-stack</span>
-              <span>Web developer</span>
+              <span>{content.hero.titleTop}</span>
+              <span>{content.hero.titleBottom}</span>
             </h1>
-            <p className="hero-lead">
-              My goal is to write maintainable, clean and understandable code so
-              development stays enjoyable.
-            </p>
+            <p className="hero-lead">{content.hero.lead}</p>
             <div className="hero-actions">
               <a className="pill pill-primary" href="#projects">
-                Projects
+                {content.hero.projectsCta}
               </a>
               <a className="pill pill-ghost" href="mailto:victorakinyemi52@gmail.com">
-                Let&#39;s talk
+                {content.hero.talkCta}
               </a>
             </div>
             <div className="social-row">
@@ -392,10 +422,7 @@ export default function Home() {
             <span className="quote-mark" aria-hidden="true">
               &ldquo;
             </span>
-            <p className="about-text">
-              I build clean, elegant, and functional web applications that are
-              scalable, optimized, and engineered for real-world performance.
-            </p>
+            <p className="about-text">{content.quote}</p>
             <span className="quote-mark" aria-hidden="true">
               &rdquo;
             </span>
@@ -405,19 +432,23 @@ export default function Home() {
         <section id="skills" className="profile reveal delay-2">
           <div className="profile-left">
             <div className="profile-intro">
-              <p className="section-label">.../About me...</p>
-              <p className="profile-text">
-                Hello! I&#39;m Victor Akinyemi, I&#39;m a full-stack web developer with
-                over 2 years of experience.
-              </p>
+              <p className="section-label">{content.aboutLabel}</p>
+              <p className="profile-text">{content.aboutIntro}</p>
             </div>
             <div className="skill-grid">
-              {skills.map((skill) => (
-                <article className="skill-card glass" key={skill.title}>
-                  <h3 className="skill-title">{skill.title}</h3>
-                  <p className="skill-list">{skill.items}</p>
-                </article>
-              ))}
+              <div className="skill-panel glass">
+                {skills.map((skill, index) => (
+                  <article
+                    className={`skill-row${index < skills.length - 1 ? " has-divider" : ""}`}
+                    key={skill.title}
+                  >
+                    <h3 className="skill-title">{skill.title}</h3>
+                    <p className="skill-list">
+                      {skill.items.split(" / ").join(", ")}
+                    </p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
           <div className="profile-right">
@@ -459,21 +490,15 @@ export default function Home() {
             <span />
           </div>
           <div className="project-head">
-            <p className="section-label">.../Projects...</p>
-            <h2 className="section-title">Full-stack projects</h2>
-            <p className="section-lead">
-              Selected builds focused on modern UI, performance, and clean
-              interfaces.
-            </p>
+            <p className="section-label">{content.projects.label}</p>
+            <h2 className="section-title">{content.projects.title}</h2>
+            <p className="section-lead">{content.projects.lead}</p>
           </div>
 
           <div className="project-section">
             <div className="project-section-head">
-              <h3 className="project-section-title">Featured work</h3>
-              <p className="project-section-text">
-                Each project highlights a focused full-stack delivery, from
-                design systems to mobile-first experiences.
-              </p>
+              <h3 className="project-section-title">{content.projects.featuredTitle}</h3>
+              <p className="project-section-text">{content.projects.featuredText}</p>
             </div>
             <div className="project-list">
               {frontendProjects.map((project, index) => (
@@ -490,7 +515,7 @@ export default function Home() {
                     title={project.title}
                   />
                   <div className="project-content">
-                    <p className="project-kicker">Full-stack project</p>
+                    <p className="project-kicker">{content.projects.kicker}</p>
                     <h3 className="project-name">{project.title}</h3>
                     <div className="project-tags">
                       {project.tech.map((tag) => (
@@ -540,7 +565,7 @@ export default function Home() {
         <footer id="contact" className="footer reveal delay-3">
           <div className="contact-panel">
             <div className="contact-left">
-              <p className="contact-role">Full-stack web developer</p>
+              <p className="contact-role">{content.contact.role}</p>
               <h2 className="contact-name">
                 <span>Victor.</span>
                 <span>Akinyemi</span>
@@ -583,7 +608,7 @@ export default function Home() {
               </div>
             </div>
             <div className="contact-right">
-              <p className="section-label">.../Contacts...</p>
+              <p className="section-label">{content.contact.label}</p>
               <nav className="contact-nav" aria-label="Footer">
                 {contactLinks.map((link) => (
                   <a key={link.label} href={link.href}>
@@ -592,11 +617,11 @@ export default function Home() {
                 ))}
               </nav>
               <div className="contact-card">
-                <p className="contact-card-title">Site</p>
+                <p className="contact-card-title">{content.contact.cardTitle}</p>
                 <div className="contact-card-lines">
-                  <span>Handcrafted by me /</span>
-                  <span>Designed by Victor /</span>
-                  <span>Powered by Next.js</span>
+                  <span>{content.contact.line1}</span>
+                  <span>{content.contact.line2}</span>
+                  <span>{content.contact.line3}</span>
                 </div>
               </div>
             </div>
