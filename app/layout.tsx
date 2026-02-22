@@ -13,9 +13,17 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Victor.AKINYEMI | Frontend Developer",
+  title: "VICTOR.AKINYEMI | WEB DEVELOPER",
   description:
     "Frontend developer focused on responsive, high-performing web experiences.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=va2", type: "image/x-icon" },
+      { url: "/favicon-va.svg?v=va2", type: "image/svg+xml" },
+    ],
+    shortcut: ["/favicon.ico?v=va2"],
+    apple: ["/favicon-va.svg?v=va2"],
+  },
 };
 
 export default function RootLayout({

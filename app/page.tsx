@@ -100,7 +100,7 @@ const localeContent = {
     yearLabel: "Year",
     emailLabel: "Email",
     hero: {
-      role: "Software developer",
+      role: "Web developer",
       titleTop: "Full-stack",
       titleBottom: "Web developer",
       lead: "My goal is to write maintainable, clean and understandable code so development stays enjoyable.",
@@ -124,11 +124,11 @@ const localeContent = {
       },
       {
         title: "Back-end",
-        items: "Node.js / Express.js / REST APIs / PostgreSQL / MongoDB / Authentication",
+        items: "Node.js / Express.js / REST APIs / PostgreSQL / MySQL / Supabase / AWS / Authentication",
       },
       {
         title: "DevOps",
-        items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Monitoring Basics",
+        items: "Git / GitHub / Docker / Vercel / CI/CD Pipelines / Monitoring",
       },
     ],
     skillsNote: "Some of my favorite technologies, topics, and tools I work with.",
@@ -193,7 +193,7 @@ const localeContent = {
     yearLabel: "Année",
     emailLabel: "Email",
     hero: {
-      role: "Développeur logiciel",
+      role: "Développeur web",
       titleTop: "Full-stack",
       titleBottom: "Développeur web",
       lead: "Mon objectif est d'écrire du code maintenable, propre et compréhensible pour que le développement reste agréable.",
@@ -218,11 +218,11 @@ const localeContent = {
       {
         title: "Back-end",
         items:
-          "Node.js / Express.js / API REST / PostgreSQL / MongoDB / Authentification",
+          "Node.js / Express.js / API REST / PostgreSQL / MySQL / Supabase / AWS / Authentification",
       },
       {
         title: "DevOps",
-        items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Bases de monitoring",
+        items: "Git / GitHub / Docker / Vercel / Pipelines CI/CD / Monitoring",
       },
     ],
     skillsNote:
@@ -333,7 +333,7 @@ export default function Home() {
 
       <main className="content">
         <header className="top-nav">
-          <div className="logo">Victor.AKINYEMI</div>
+          <div className="logo">VICTOR.AKINYEMI</div>
           <nav className="nav-links" aria-label="Primary">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href}>
