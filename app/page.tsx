@@ -10,7 +10,7 @@ const socialLinks = [
   { label: "GitHub", href: "https://github.com/AkinyemiVictor", type: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/knym-/", type: "linkedin" },
   { label: "Telegram", href: "https://web.telegram.org/k/", type: "telegram" },
-  { label: "Instagram", href: "https://www.instagram.com/sope.idesign/", type: "instagram" },
+  { label: "Instagram", href: "https://www.instagram.com/sope.icreate/", type: "instagram" },
 ] as const;
 
 const baseProjects = [
@@ -131,6 +131,7 @@ const localeContent = {
         items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Monitoring Basics",
       },
     ],
+    skillsNote: "Some of my favorite technologies, topics, and tools I work with.",
     projects: {
       label: ".../Projects...",
       title: "Full-stack projects",
@@ -224,6 +225,8 @@ const localeContent = {
         items: "Git / GitHub Actions / Docker / Vercel / CI/CD / Bases de monitoring",
       },
     ],
+    skillsNote:
+      "Certaines de mes technologies, thématiques et outils préférés avec lesquels je travaille.",
     projects: {
       label: ".../Projets...",
       title: "Projets full-stack",
@@ -430,28 +433,69 @@ export default function Home() {
         </section>
 
         <section id="skills" className="profile reveal delay-2">
+          <div className="profile-intro">
+            <p className="section-label">{content.aboutLabel}</p>
+            <p className="profile-text">{content.aboutIntro}</p>
+          </div>
           <div className="profile-left">
-            <div className="profile-intro">
-              <p className="section-label">{content.aboutLabel}</p>
-              <p className="profile-text">{content.aboutIntro}</p>
-            </div>
             <div className="skill-grid">
-              <div className="skill-panel glass">
-                {skills.map((skill, index) => (
-                  <article
-                    className={`skill-row${index < skills.length - 1 ? " has-divider" : ""}`}
-                    key={skill.title}
-                  >
-                    <h3 className="skill-title">{skill.title}</h3>
-                    <p className="skill-list">
-                      {skill.items.split(" / ").join(", ")}
-                    </p>
+              {skills[0] && skills[1] && skills[2] && skills[3] ? (
+                <div className="skill-panel">
+                  <article className="skill-row skill-row-front">
+                    <h3 className="skill-title">{skills[0].title}</h3>
+                    <p className="skill-list">{skills[0].items}</p>
                   </article>
-                ))}
-              </div>
+
+                  <div className="skill-mid">
+                    <article className="skill-row skill-row-styles">
+                      <h3 className="skill-title">{skills[1].title}</h3>
+                      <p className="skill-list">{skills[1].items}</p>
+                    </article>
+                    <div className="skill-orbs" aria-hidden="true">
+                      <span className="skill-orb">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.5 0-.25-.01-.9-.01-1.76-2.78.62-3.36-1.38-3.36-1.38-.45-1.18-1.1-1.5-1.1-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.2 9.2 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.4.21 2.44.1 2.7.64.72 1.02 1.64 1.02 2.77 0 3.98-2.35 4.86-4.59 5.11.36.33.68.97.68 1.96 0 1.41-.01 2.55-.01 2.9 0 .28.18.6.69.5A10.17 10.17 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" />
+                        </svg>
+                      </span>
+                      <span className="skill-orb skill-orb-light">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M14 3h7v7h-2V6.41l-8.3 8.3-1.4-1.42 8.3-8.29H14V3Z" />
+                          <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <article className="skill-row skill-row-back">
+                    <h3 className="skill-title">{skills[2].title}</h3>
+                    <p className="skill-list">{skills[2].items}</p>
+                  </article>
+
+                  <div className="skill-foot">
+                    <p className="skill-note">{content.skillsNote}</p>
+                    <article className="skill-row skill-row-devops">
+                      <h3 className="skill-title">{skills[3].title}</h3>
+                      <p className="skill-list">{skills[3].items}</p>
+                    </article>
+                  </div>
+                </div>
+              ) : (
+                <div className="skill-panel">
+                  {skills.map((skill) => (
+                    <article className="skill-row" key={skill.title}>
+                      <h3 className="skill-title">{skill.title}</h3>
+                      <p className="skill-list">{skill.items}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className="profile-right">
+            <div className="profile-intro-tablet">
+              <p className="section-label">{content.aboutLabel}</p>
+              <p className="profile-text">{content.aboutIntro}</p>
+            </div>
             <div className="portrait-card glass">
               <div className="portrait-frame">
                 <div className="portrait-media">
@@ -492,14 +536,9 @@ export default function Home() {
           <div className="project-head">
             <p className="section-label">{content.projects.label}</p>
             <h2 className="section-title">{content.projects.title}</h2>
-            <p className="section-lead">{content.projects.lead}</p>
           </div>
 
           <div className="project-section">
-            <div className="project-section-head">
-              <h3 className="project-section-title">{content.projects.featuredTitle}</h3>
-              <p className="project-section-text">{content.projects.featuredText}</p>
-            </div>
             <div className="project-list">
               {frontendProjects.map((project, index) => (
                 <article
@@ -529,7 +568,7 @@ export default function Home() {
                     <div className="project-links">
                       {project.links?.github ? (
                         <a
-                          className="project-icon"
+                          className="project-icon project-icon-github"
                           href={project.links.github}
                           aria-label={`${project.title} GitHub`}
                           target="_blank"
@@ -542,7 +581,7 @@ export default function Home() {
                       ) : null}
                       {project.links?.live ? (
                         <a
-                          className="project-icon"
+                          className="project-icon project-icon-live"
                           href={project.links.live}
                           aria-label={`${project.title} Live site`}
                           target="_blank"
