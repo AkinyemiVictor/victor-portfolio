@@ -465,12 +465,6 @@ export default function Home() {
                             <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.5 0-.25-.01-.9-.01-1.76-2.78.62-3.36-1.38-3.36-1.38-.45-1.18-1.1-1.5-1.1-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.2 9.2 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.4.21 2.44.1 2.7.64.72 1.02 1.64 1.02 2.77 0 3.98-2.35 4.86-4.59 5.11.36.33.68.97.68 1.96 0 1.41-.01 2.55-.01 2.9 0 .28.18.6.69.5A10.17 10.17 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" />
                           </svg>
                         </span>
-                        <span className="skill-orb skill-orb-light">
-                          <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M14 3h7v7h-2V6.41l-8.3 8.3-1.4-1.42 8.3-8.29H14V3Z" />
-                            <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
-                          </svg>
-                        </span>
                       </a>
                     </div>
                   </div>
@@ -558,7 +552,6 @@ export default function Home() {
                 >
                   <ProjectVisual
                     layout={project.layout}
-                    liveLink={project.links?.github}
                     thumbnail={project.thumbnail}
                     title={project.title}
                   />
@@ -575,26 +568,36 @@ export default function Home() {
                     <p className="project-copy">{project.summary}</p>
                     <p className="project-copy">{project.details}</p>
                     <div className="project-links">
-                      {project.links?.github ? (
-                        <a
-                          className="project-icon-group"
-                          href={project.links.github}
-                          aria-label={`${project.title} GitHub`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <span className="project-icon project-icon-github">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.5 0-.25-.01-.9-.01-1.76-2.78.62-3.36-1.38-3.36-1.38-.45-1.18-1.1-1.5-1.1-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.2 9.2 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.4.21 2.44.1 2.7.64.72 1.02 1.64 1.02 2.77 0 3.98-2.35 4.86-4.59 5.11.36.33.68.97.68 1.96 0 1.41-.01 2.55-.01 2.9 0 .28.18.6.69.5A10.17 10.17 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" />
-                            </svg>
-                          </span>
-                          <span className="project-icon project-icon-live">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M14 3h7v7h-2V6.41l-8.3 8.3-1.4-1.42 8.3-8.29H14V3Z" />
-                              <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
-                            </svg>
-                          </span>
-                        </a>
+                      {project.links?.github || project.links?.live ? (
+                        <div className="project-icon-group">
+                          {project.links?.github ? (
+                            <a
+                              className="project-icon"
+                              href={project.links.github}
+                              aria-label={`${project.title} GitHub`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.5 0-.25-.01-.9-.01-1.76-2.78.62-3.36-1.38-3.36-1.38-.45-1.18-1.1-1.5-1.1-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.2 9.2 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.4.21 2.44.1 2.7.64.72 1.02 1.64 1.02 2.77 0 3.98-2.35 4.86-4.59 5.11.36.33.68.97.68 1.96 0 1.41-.01 2.55-.01 2.9 0 .28.18.6.69.5A10.17 10.17 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" />
+                              </svg>
+                            </a>
+                          ) : null}
+                          {project.links?.live ? (
+                            <a
+                              className="project-icon project-icon-live"
+                              href={project.links.live}
+                              aria-label={`${project.title} Live site`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 3h7v7h-2V6.41l-8.3 8.3-1.4-1.42 8.3-8.29H14V3Z" />
+                                <path d="M5 5h6v2H7v10h10v-4h2v6H5V5Z" />
+                              </svg>
+                            </a>
+                          ) : null}
+                        </div>
                       ) : null}
                     </div>
                   </div>
