@@ -982,7 +982,10 @@ a {
 
 .project-media-frame {
   position: absolute;
-  inset: var(--preview-gap-y) 0;
+  top: var(--preview-gap-y);
+  left: 0;
+  right: 0;
+  height: calc(100% - (var(--preview-gap-y) * 2));
   border-radius: 0;
   overflow: hidden;
   z-index: 0;
@@ -991,6 +994,8 @@ a {
 .project-thumbnail {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center center;
   border-radius: 0;
@@ -2591,6 +2596,36 @@ a {
 }
 
 @media (min-width: 721px) and (max-width: 900px) {
+  .project-item,
+  .project-item[data-align="right"] {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "visual"
+      "content";
+    align-items: start;
+  }
+
+  .project-visual-shell {
+    grid-area: visual;
+  }
+
+  .project-visual {
+    min-height: clamp(260px, 42vw, 380px);
+    aspect-ratio: auto;
+  }
+
+  .project-content,
+  .project-item[data-align="right"] .project-content {
+    grid-area: content;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .project-item[data-align="right"] .project-tags,
+  .project-item[data-align="right"] .project-links {
+    justify-content: flex-start;
+  }
+
   .profile {
     row-gap: clamp(12px, 2.4vw, 18px);
     grid-template-areas:

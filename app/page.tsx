@@ -5,6 +5,20 @@ import { useState } from "react";
 import ProjectVisual from "./components/ProjectVisual";
 
 type Locale = "en" | "fr";
+type ProjectId = "jm" | "nextCentury" | "cultureHill" | "shopIt";
+type ProjectLinks = {
+  github?: string;
+  live?: string;
+};
+type BaseProject = {
+  id: ProjectId;
+  title: string;
+  tech: string[];
+  tone: string;
+  layout: string;
+  thumbnail: string;
+  links: ProjectLinks;
+};
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/AkinyemiVictor", type: "github" },
@@ -13,7 +27,7 @@ const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/sope.icreate/", type: "instagram" },
 ] as const;
 
-const baseProjects = [
+const baseProjects: readonly BaseProject[] = [
   {
     id: "jm",
     title: "JM Quality Constructions",
@@ -86,7 +100,7 @@ const baseProjects = [
       live: "https://shopit-e-commerce-web-app.vercel.app/",
     },
   },
-] as const;
+];
 
 const localeContent = {
   en: {
