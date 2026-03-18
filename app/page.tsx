@@ -552,6 +552,7 @@ export default function Home() {
                 >
                   <ProjectVisual
                     layout={project.layout}
+                    liveLink={project.links.live}
                     thumbnail={project.thumbnail}
                     title={project.title}
                   />
