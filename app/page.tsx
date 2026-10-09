@@ -5,7 +5,7 @@ import { useState } from "react";
 import ProjectVisual from "./components/ProjectVisual";
 
 type Locale = "en" | "fr";
-type ProjectId = "meal05" | "jm" | "nextCentury" | "cultureHill" | "shopIt";
+type ProjectId = "jm" | "cultureHill" | "shopIt";
 type ProjectLinks = {
   github?: string;
   live?: string;
@@ -16,7 +16,7 @@ type BaseProject = {
   tech: string[];
   tone: string;
   layout: string;
-  thumbnail?: string;
+  thumbnail: string;
   links: ProjectLinks;
 };
 
@@ -28,22 +28,6 @@ const socialLinks = [
 ] as const;
 
 const baseProjects: readonly BaseProject[] = [
-  {
-    id: "meal05",
-    title: "Meal05",
-    tech: [
-      "Founder-led venture",
-      "Food commerce",
-      "Supplier coordination",
-      "Digital product",
-      "Ibadan, Nigeria",
-    ],
-    tone: "blue",
-    layout: "split",
-    links: {
-      github: "https://github.com/AkinyemiVictor/meal05-web",
-    },
-  },
   {
     id: "jm",
     title: "JM Quality Constructions",
@@ -60,24 +44,6 @@ const baseProjects: readonly BaseProject[] = [
     links: {
       github: "https://github.com/AkinyemiVictor/jm-quality-constructions",
       live: "https://jm-quality-constructions.vercel.app/",
-    },
-  },
-  {
-    id: "nextCentury",
-    title: "Next Century Power",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Performance",
-      "Component System",
-    ],
-    tone: "sand",
-    layout: "split",
-    thumbnail: "/previews/next-century-power.png",
-    links: {
-      github: "https://github.com/AkinyemiVictor/next-century-power",
-      live: "https://next-century-power.vercel.app/",
     },
   },
   {
@@ -130,65 +96,53 @@ const localeContent = {
     yearLabel: "Year",
     emailLabel: "Email",
     hero: {
-      role: "Entrepreneur",
-      titleTop: "Building businesses.",
-      titleBottom: "Creating value.",
-      lead: "I turn real problems into practical ventures, products, and systems. Currently building Meal05, a foodstuff delivery business focused on making everyday grocery shopping more convenient in Ibadan.",
-      projectsCta: "Explore my journey",
-      talkCta: "What I'm building",
+      role: "Web developer",
+      titleTop: "Full-stack",
+      titleBottom: "Web developer",
+      lead: "My goal is to write maintainable, clean and understandable code so development stays enjoyable.",
+      projectsCta: "Projects",
+      talkCta: "Let's talk",
     },
     quote:
-      "Entrepreneurship is more than having ideas. It is identifying real problems, understanding people, building sustainable solutions, and having the discipline to keep going when things get difficult.",
+      "I build clean, elegant, and functional web applications that are scalable, optimized, and engineered for real-world performance.",
     aboutLabel: ".../About me...",
     aboutIntro:
-      "I'm Victor Akinyemi, an entrepreneur with a background in computer science, digital design, and web development. My interests extend into business creation, finance, strategy, and understanding how ideas become sustainable ventures.",
+      "Hello! I'm Victor Akinyemi, I'm a full-stack web developer with over 2 years of experience.",
     skills: [
       {
-        title: "Venture building",
+        title: "Front-end",
         items:
-          "Opportunity discovery / Idea validation / Business models / Venture development",
+          "HTML5 / CSS3 / JavaScript / Next.js / React / React Native / Responsive Web Design / Component Libraries / Interaction Design",
       },
       {
-        title: "Product & technology",
-        items: "Software development / Digital products / Product thinking / Design systems / Automation",
+        title: "Styles",
+        items: "Tailwind / Bootstrap",
       },
       {
-        title: "Strategy & finance",
-        items: "Pricing / Unit economics / Capital allocation / Operational efficiency / Business fundamentals",
+        title: "Back-end",
+        items: "Node.js / Express.js / REST APIs / PostgreSQL / MySQL / Supabase / AWS / Authentication",
       },
       {
-        title: "Operations & problem-solving",
-        items: "Supplier coordination / Fulfilment / Customer insight / Process design / Practical execution",
+        title: "DevOps",
+        items: "Git / GitHub / Docker / Vercel / CI/CD Pipelines / Monitoring",
       },
     ],
-    skillsNote: "The areas I use to turn ideas into useful, operating ventures.",
+    skillsNote: "Some of my favorite technologies, topics, and tools I work with.",
     projects: {
-      label: ".../Ventures & products...",
-      title: "What I'm building",
-      lead: "Businesses, products, and experiments shaped by real customer problems.",
-      featuredTitle: "Featured venture",
+      label: ".../Projects...",
+      title: "Full-stack projects",
+      lead: "Selected builds focused on modern UI, performance, and clean interfaces.",
+      featuredTitle: "Featured work",
       featuredText:
-        "Each project reflects a stage of learning, from exploring an opportunity to building a product people can use.",
-      kicker: "Venture / product",
+        "Each project highlights a focused full-stack delivery, from design systems to mobile-first experiences.",
+      kicker: "Full-stack project",
     },
     projectText: {
-      meal05: {
-        summary:
-          "A founder-led food commerce venture making it easier for households to source everyday foodstuff in Ibadan.",
-        details:
-          "The work spans sourcing, supplier coordination, pricing, fulfilment, customer acquisition, and the digital ordering experience.",
-      },
       jm: {
         summary:
           "Marketing website for a construction company with clear service messaging and mobile-first browsing.",
         details:
           "Built service pages, a project showcase, and a quote flow designed to improve lead conversion.",
-      },
-      nextCentury: {
-        summary:
-          "Corporate web experience for an energy brand focused on trust, speed, and clear information architecture.",
-        details:
-          "Delivered responsive content sections, conversion-oriented CTAs, and scalable component patterns.",
       },
       cultureHill: {
         summary:
@@ -204,7 +158,7 @@ const localeContent = {
       },
     },
     contact: {
-      role: "Entrepreneur / Builder",
+      role: "Full-stack web developer",
       label: ".../Contacts...",
       nav: {
         main: "Main",
@@ -229,67 +183,55 @@ const localeContent = {
     yearLabel: "Année",
     emailLabel: "Email",
     hero: {
-      role: "Entrepreneur",
-      titleTop: "Construire des entreprises.",
-      titleBottom: "Créer de la valeur.",
-      lead: "Je transforme des problèmes réels en entreprises, produits et systèmes utiles. Je construis actuellement Meal05, un service de livraison de produits alimentaires à Ibadan.",
-      projectsCta: "Mon parcours",
-      talkCta: "Ce que je construis",
+      role: "Développeur web",
+      titleTop: "Full-stack",
+      titleBottom: "Développeur web",
+      lead: "Mon objectif est d'écrire du code maintenable, propre et compréhensible pour que le développement reste agréable.",
+      projectsCta: "Projets",
+      talkCta: "Discutons",
     },
     quote:
-      "L'entrepreneuriat ne consiste pas seulement à avoir des idées. Il s'agit d'identifier de vrais problèmes, de comprendre les personnes, de construire des solutions durables et de continuer malgré les difficultés.",
+      "Je crée des applications web propres, élégantes et fonctionnelles, conçues pour être scalables, optimisées et performantes en conditions réelles.",
     aboutLabel: ".../À propos...",
     aboutIntro:
-      "Je suis Victor Akinyemi, entrepreneur avec une formation en informatique, design numérique et développement web. Je m'intéresse aussi à la création d'entreprises, à la finance et à la stratégie.",
+      "Bonjour ! Je suis Victor Akinyemi, développeur web full-stack avec plus de 2 ans d'expérience.",
     skills: [
       {
-        title: "Création d'entreprise",
+        title: "Front-end",
         items:
-          "Opportunités / Validation d'idées / Modèles économiques / Développement de projets",
+          "HTML5 / CSS3 / JavaScript / Next.js / React / React Native / Responsive Web Design / Component Libraries / Interaction Design",
       },
       {
-        title: "Produit & technologie",
-        items: "Développement logiciel / Produits numériques / Réflexion produit / Automatisation",
+        title: "Styles",
+        items: "Tailwind / Bootstrap",
       },
       {
-        title: "Stratégie & finance",
+        title: "Back-end",
         items:
-          "Prix / Économie unitaire / Allocation du capital / Efficacité opérationnelle",
+          "Node.js / Express.js / API REST / PostgreSQL / MySQL / Supabase / AWS / Authentification",
       },
       {
-        title: "Opérations & résolution",
-        items: "Fournisseurs / Exécution / Compréhension client / Processus / Résolution de problèmes",
+        title: "DevOps",
+        items: "Git / GitHub / Docker / Vercel / Pipelines CI/CD / Monitoring",
       },
     ],
     skillsNote:
-      "Les domaines qui m'aident à transformer des idées en projets utiles et opérationnels.",
+      "Certaines de mes technologies, thématiques et outils préférés avec lesquels je travaille.",
     projects: {
-      label: ".../Projets & entreprises...",
-      title: "Ce que je construis",
-      lead: "Des entreprises, produits et expériences guidés par des problèmes réels.",
-      featuredTitle: "Projet principal",
+      label: ".../Projets...",
+      title: "Projets full-stack",
+      lead: "Une sélection de réalisations axées sur des interfaces modernes, la performance et la clarté.",
+      featuredTitle: "Projets phares",
       featuredText:
-        "Chaque projet représente une étape d'apprentissage, de l'exploration d'une opportunité à la création d'un produit utile.",
-      kicker: "Entreprise / produit",
+        "Chaque projet illustre une livraison full-stack ciblée, des systèmes de design aux expériences mobile-first.",
+      kicker: "Projet full-stack",
     },
     projectText: {
-      meal05: {
-        summary:
-          "Une entreprise de commerce alimentaire qui simplifie l'achat de produits essentiels pour les foyers à Ibadan.",
-        details:
-          "Le projet couvre l'approvisionnement, les fournisseurs, les prix, la livraison, l'acquisition client et l'expérience de commande numérique.",
-      },
       jm: {
         summary:
           "Site marketing pour une entreprise de construction, avec un message clair et une navigation mobile-first.",
         details:
           "Création des pages de services, d'une vitrine de projets et d'un parcours de devis pensé pour améliorer la conversion.",
-      },
-      nextCentury: {
-        summary:
-          "Expérience web corporate pour une marque énergie, axée sur la confiance, la rapidité et une architecture d'information claire.",
-        details:
-          "Livraison de sections de contenu responsive, de CTA orientés conversion et de patterns composants évolutifs.",
       },
       cultureHill: {
         summary:
@@ -305,7 +247,7 @@ const localeContent = {
       },
     },
     contact: {
-      role: "Entrepreneur / Builder",
+      role: "Développeur web full-stack",
       label: ".../Contact...",
       nav: {
         main: "Accueil",
@@ -349,7 +291,7 @@ export default function Home() {
 
   const skills = content.skills;
 
-  const ventureProjects = baseProjects.map((project) => ({
+  const frontendProjects = baseProjects.map((project) => ({
     ...project,
     summary: content.projectText[project.id].summary,
     details: content.projectText[project.id].details,
@@ -581,12 +523,11 @@ export default function Home() {
           <div className="project-head">
             <p className="section-label">{content.projects.label}</p>
             <h2 className="section-title">{content.projects.title}</h2>
-            <p className="project-head-lead">{content.projects.lead}</p>
           </div>
 
           <div className="project-section">
             <div className="project-list">
-              {ventureProjects.map((project, index) => (
+              {frontendProjects.map((project, index) => (
                 <article
                   className="project-item"
                   data-tone={project.tone}

@@ -13,9 +13,9 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "VICTOR.AKINYEMI | ENTREPRENEUR",
+  title: "VICTOR.AKINYEMI | WEB DEVELOPER",
   description:
-    "Victor Akinyemi is an entrepreneur building practical businesses, products, and systems that solve real-world problems.",
+    "Frontend developer focused on responsive, high-performing web experiences.",
   icons: {
     icon: [
       { url: "/favicon.ico?v=va2", type: "image/x-icon" },
